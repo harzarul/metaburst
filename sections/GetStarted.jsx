@@ -4,7 +4,7 @@ import {motion} from 'framer-motion';
 import styles from '../styles';
 import { startingFeatures } from '../constants';
 import { StartSteps, TitleText, TypingText } from '../components';
-import { staggerContainer, fadeIn, planaetVariants } from '../utils/motion';
+import { staggerContainer, fadeIn, planetVariants } from '../utils/motion';
 
 const GetStarted = () => (
   <section className={`${styles.paddings} relative z-10`}>
@@ -14,7 +14,8 @@ const GetStarted = () => (
       whileInView='show'
       viewport={{once:false, amount: 0.25}}
       >
-      <motion.div className={`flex-1 ${styles.flexCenter}`}>
+      <motion.div className={`flex-1 ${styles.flexCenter}`}
+        variants={planetVariants('left')}>
         <img className='w-[90%] h-[90%] object-contain'
           src="/get-started.png"
           alt="planet" />
